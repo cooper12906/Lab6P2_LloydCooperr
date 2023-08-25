@@ -9,6 +9,7 @@ public class frameMain extends javax.swing.JFrame {
     private ArrayList <Juego> juegos = new ArrayList();
     public frameMain() {
         initComponents();
+        this.setLocationRelativeTo(null);
     }
 
     /**
@@ -59,6 +60,8 @@ public class frameMain extends javax.swing.JFrame {
         rbNo = new javax.swing.JRadioButton();
         rbSi = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tableConsolas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -290,15 +293,34 @@ public class frameMain extends javax.swing.JFrame {
         jPanel3.setBackground(new java.awt.Color(255, 255, 255));
         jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
+        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tableConsolas);
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 540, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(31, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 397, Short.MAX_VALUE)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 345, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(27, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Listar consola", jPanel3);
@@ -326,10 +348,25 @@ public class frameMain extends javax.swing.JFrame {
         int numeroControles = Integer.parseInt(tfNumeroControles.getText());
         int almacenamiento = Integer.parseInt(tfAlmacenamientoConsola.getText());
         String tipoConexion = tfTipoConexion.getText();
+            
+        if ((identificacion.length() == 8) &&
+            (identificacion.substring(0, 3).matches("\\d+")) &&
+            (identificacion.substring(4).matches("[A-Z]+"))) {
+                
+            consolas.add(new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo));
+            JOptionPane.showMessageDialog(this,"Consola estacionaria agregada correctamente");                           
+        } else {
+            JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
+        }    
         
-        consolas.add(new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo));
-        
-        JOptionPane.showMessageDialog(this,"Consola estacionaria agregada correctamente");
+        tfIdentificacionConsola.setText("");
+        tfFabricanteConsola.setText("");
+        tfAñosUsoConsola.setText("");
+        tfPrecioConsola.setText("");
+        tfModeloConsola.setText("");
+        tfNumeroControles.setText("");
+        tfAlmacenamientoConsola.setText("");
+        tfTipoConexion.setText("");
     }//GEN-LAST:event_btnCrearConsolaMouseClicked
     
     private void btnCrearPortatil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearPortatil1MouseClicked
@@ -348,9 +385,23 @@ public class frameMain extends javax.swing.JFrame {
             tieneEstuche = false;
         }
         
-        consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
+        if ((identificacion.length() == 8) &&
+            (identificacion.substring(0, 3).matches("\\d+")) &&
+            (identificacion.substring(4).matches("[A-Z]+"))) {
+                
+            consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
+            JOptionPane.showMessageDialog(this,"Consola portatil agregada correctamente");                           
+        } else {
+            JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
+        }
         
-        JOptionPane.showMessageDialog(this, "Consola portatil agregada correctamente");
+        tfIdentificacionPortatil.setText("");
+        tfFabricantePortatil.setText("");
+        tfAñosUsoPortatil.setText("");
+        tfPrecioPortatil.setText("");
+        tfModeloPortatil.setText("");
+        tfTamañoPantalla.setText("");
+        tfBateriaPortatil.setText("");
     }//GEN-LAST:event_btnCrearPortatil1MouseClicked
 
     /**
@@ -410,9 +461,11 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JRadioButton rbNo;
     private javax.swing.JRadioButton rbSi;
+    private javax.swing.JTable tableConsolas;
     private javax.swing.JTextField tfAlmacenamientoConsola;
     private javax.swing.JTextField tfAñosUsoConsola;
     private javax.swing.JTextField tfAñosUsoPortatil;

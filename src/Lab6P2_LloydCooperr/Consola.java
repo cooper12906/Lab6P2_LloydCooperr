@@ -24,12 +24,7 @@ public class Consola {
     }
 
     public void setIdentificacion(String identificacion) {
-        if (identificacion.length() <= 4) {
-            this.identificacion = identificacion;
-        } else {
-            JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
-        }
-        
+        this.identificacion = identificacion;
     }
 
     public String getFabricante() {
