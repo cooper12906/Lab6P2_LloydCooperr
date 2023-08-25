@@ -11,6 +11,9 @@ public class frameMain extends javax.swing.JFrame {
     public frameMain() {
         initComponents();
         this.setLocationRelativeTo(null);
+        dialogModificarConsola.setVisible(false);
+        dialogEliminarConsola.setVisible(false);
+        dialogVerJuegos.setVisible(false);
     }
 
     /**
@@ -24,6 +27,33 @@ public class frameMain extends javax.swing.JFrame {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         popUpMenu = new javax.swing.JPopupMenu();
+        modificarConsola = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        eliminarConsola = new javax.swing.JMenuItem();
+        jSeparator2 = new javax.swing.JPopupMenu.Separator();
+        listarJuegos = new javax.swing.JMenuItem();
+        dialogModificarConsola = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        tfIdentificacionConsola1 = new javax.swing.JTextField();
+        tfFabricanteConsola1 = new javax.swing.JTextField();
+        tfAñosUsoConsola1 = new javax.swing.JTextField();
+        tfPrecioConsola1 = new javax.swing.JTextField();
+        tfModeloConsola1 = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
+        btnModificarConsola = new javax.swing.JButton();
+        jLabel21 = new javax.swing.JLabel();
+        tfNumeroControles1 = new javax.swing.JTextField();
+        tfAlmacenamientoConsola1 = new javax.swing.JTextField();
+        tfTipoConexion1 = new javax.swing.JTextField();
+        jLabel22 = new javax.swing.JLabel();
+        jLabel23 = new javax.swing.JLabel();
+        jLabel24 = new javax.swing.JLabel();
+        dialogEliminarConsola = new javax.swing.JDialog();
+        dialogVerJuegos = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         tfIdentificacionConsola = new javax.swing.JTextField();
@@ -61,9 +91,194 @@ public class frameMain extends javax.swing.JFrame {
         tfBateriaPortatil = new javax.swing.JTextField();
         rbNo = new javax.swing.JRadioButton();
         rbSi = new javax.swing.JRadioButton();
+        jLabel25 = new javax.swing.JLabel();
+        jLabel26 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tableConsolas = new javax.swing.JTable();
+
+        modificarConsola.setText("Modificar consola");
+        modificarConsola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                modificarConsolaActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(modificarConsola);
+        popUpMenu.add(jSeparator1);
+
+        eliminarConsola.setText("Eliminar consola");
+        eliminarConsola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                eliminarConsolaActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(eliminarConsola);
+        popUpMenu.add(jSeparator2);
+
+        listarJuegos.setText("Ver juegos");
+        listarJuegos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                listarJuegosActionPerformed(evt);
+            }
+        });
+        popUpMenu.add(listarJuegos);
+
+        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
+
+        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel16.setText("Identificacion de la consola");
+
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Fabricante de la consola");
+
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Años de uso de la consola");
+
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Precio de la consola");
+
+        jLabel20.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel20.setText("Modelo de la consola");
+
+        btnModificarConsola.setText("Modificar consola");
+        btnModificarConsola.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnModificarConsolaMouseClicked(evt);
+            }
+        });
+
+        jLabel21.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
+        jLabel21.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel21.setText("Modificar consola");
+
+        jLabel22.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel22.setText("Numero de controles");
+
+        jLabel23.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel23.setText("Almacenamiento");
+
+        jLabel24.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel24.setText("Tipo de conexion");
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(53, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(btnModificarConsola)
+                        .addGap(53, 53, 53))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel21)
+                            .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel20)
+                                    .addComponent(jLabel17)
+                                    .addComponent(jLabel16)
+                                    .addComponent(jLabel18)
+                                    .addComponent(jLabel19)
+                                    .addComponent(jLabel22)
+                                    .addComponent(jLabel23)
+                                    .addComponent(jLabel24))
+                                .addGap(18, 18, 18)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(tfTipoConexion1, javax.swing.GroupLayout.DEFAULT_SIZE, 160, Short.MAX_VALUE)
+                                    .addComponent(tfAlmacenamientoConsola1)
+                                    .addComponent(tfNumeroControles1)
+                                    .addComponent(tfIdentificacionConsola1)
+                                    .addComponent(tfFabricanteConsola1)
+                                    .addComponent(tfAñosUsoConsola1)
+                                    .addComponent(tfPrecioConsola1)
+                                    .addComponent(tfModeloConsola1))))
+                        .addGap(225, 225, 225))))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addGap(30, 30, 30)
+                .addComponent(jLabel21)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfIdentificacionConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel16))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfFabricanteConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel17))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAñosUsoConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel18))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfPrecioConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel19))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfModeloConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel20))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfNumeroControles1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel22))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAlmacenamientoConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel23))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTipoConexion1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel24))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btnModificarConsola)
+                .addGap(34, 34, 34))
+        );
+
+        javax.swing.GroupLayout dialogModificarConsolaLayout = new javax.swing.GroupLayout(dialogModificarConsola.getContentPane());
+        dialogModificarConsola.getContentPane().setLayout(dialogModificarConsolaLayout);
+        dialogModificarConsolaLayout.setHorizontalGroup(
+            dialogModificarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 600, Short.MAX_VALUE)
+            .addGroup(dialogModificarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dialogModificarConsolaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        dialogModificarConsolaLayout.setVerticalGroup(
+            dialogModificarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 391, Short.MAX_VALUE)
+            .addGroup(dialogModificarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(dialogModificarConsolaLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout dialogEliminarConsolaLayout = new javax.swing.GroupLayout(dialogEliminarConsola.getContentPane());
+        dialogEliminarConsola.getContentPane().setLayout(dialogEliminarConsolaLayout);
+        dialogEliminarConsolaLayout.setHorizontalGroup(
+            dialogEliminarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        dialogEliminarConsolaLayout.setVerticalGroup(
+            dialogEliminarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout dialogVerJuegosLayout = new javax.swing.GroupLayout(dialogVerJuegos.getContentPane());
+        dialogVerJuegos.getContentPane().setLayout(dialogVerJuegosLayout);
+        dialogVerJuegosLayout.setHorizontalGroup(
+            dialogVerJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
+        dialogVerJuegosLayout.setVerticalGroup(
+            dialogVerJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -217,6 +432,12 @@ public class frameMain extends javax.swing.JFrame {
         buttonGroup1.add(rbSi);
         rbSi.setText("Si");
 
+        jLabel25.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel25.setText("Tamaño de la pantalla");
+
+        jLabel26.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel26.setText("Duracion de bateria");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -238,7 +459,9 @@ public class frameMain extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(jLabel7)
                     .addComponent(jLabel9)
-                    .addComponent(jLabel10))
+                    .addComponent(jLabel10)
+                    .addComponent(jLabel25)
+                    .addComponent(jLabel26))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(tfBateriaPortatil)
@@ -282,9 +505,13 @@ public class frameMain extends javax.swing.JFrame {
                     .addComponent(tfModeloPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfTamañoPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfTamañoPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel25))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(tfBateriaPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfBateriaPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel26))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnCrearPortatil1)
                 .addGap(34, 34, 34))
@@ -300,7 +527,7 @@ public class frameMain extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio", "Tipo de consola"
             }
         ));
         tableConsolas.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -358,7 +585,7 @@ public class frameMain extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio", "Tipo de consola"
             }
         ));
         DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
@@ -368,13 +595,20 @@ public class frameMain extends javax.swing.JFrame {
             (identificacion.substring(4).matches("[A-Z]+"))) {
                 
             consolas.add(new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo));
+            String tipo = "";
             for (Consola consola : consolas) {
+                if (consola instanceof Portatil) {
+                    tipo = "Portatil";
+                } else {
+                    tipo = "Estacionario";
+                }
                 model.addRow(new Object[] {
                     consola.getIdentificacion(),
                     consola.getFabricante(),
                     consola.getAñosUso(),
                     consola.getPrecio(),
                     consola.getModelo(),
+                    tipo
                 });
             }
 
@@ -415,7 +649,7 @@ public class frameMain extends javax.swing.JFrame {
 
             },
             new String [] {
-                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio" , "Tipo de consola"
             }
         ));
         DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
@@ -425,13 +659,20 @@ public class frameMain extends javax.swing.JFrame {
             (identificacion.substring(4).matches("[A-Z]+"))) {
                 
             consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
+            String tipo = "";
             for (Consola consola : consolas) {
+                if (consola instanceof Portatil) {
+                    tipo = "Portatil";
+                } else {
+                    tipo = "Estacionario";
+                }
                 model.addRow(new Object[] {
                     consola.getIdentificacion(),
                     consola.getFabricante(),
                     consola.getAñosUso(),
                     consola.getPrecio(),
                     consola.getModelo(),
+                    tipo
                 });
             }
 
@@ -454,9 +695,29 @@ public class frameMain extends javax.swing.JFrame {
 
     private void tableConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConsolasMouseClicked
         if (evt.isMetaDown()) {
+            popUpMenu.show(evt.getComponent(), evt.getX(), evt.getX());
             
         }
     }//GEN-LAST:event_tableConsolasMouseClicked
+
+    private void btnModificarConsolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarConsolaMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnModificarConsolaMouseClicked
+
+    private void modificarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarConsolaActionPerformed
+        dialogModificarConsola.pack();
+        dialogModificarConsola.setModal(true);
+        dialogModificarConsola.setLocationRelativeTo(this);
+        dialogModificarConsola.setVisible(true);
+    }//GEN-LAST:event_modificarConsolaActionPerformed
+
+    private void listarJuegosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listarJuegosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_listarJuegosActionPerformed
+
+    private void eliminarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarConsolaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarConsolaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -496,7 +757,12 @@ public class frameMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearConsola;
     private javax.swing.JButton btnCrearPortatil1;
+    private javax.swing.JButton btnModificarConsola;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.JDialog dialogEliminarConsola;
+    private javax.swing.JDialog dialogModificarConsola;
+    private javax.swing.JDialog dialogVerJuegos;
+    private javax.swing.JMenuItem eliminarConsola;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -504,7 +770,18 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel21;
+    private javax.swing.JLabel jLabel22;
+    private javax.swing.JLabel jLabel23;
+    private javax.swing.JLabel jLabel24;
+    private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -513,28 +790,41 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JMenuItem listarJuegos;
+    private javax.swing.JMenuItem modificarConsola;
     private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JRadioButton rbNo;
     private javax.swing.JRadioButton rbSi;
     private javax.swing.JTable tableConsolas;
     private javax.swing.JTextField tfAlmacenamientoConsola;
+    private javax.swing.JTextField tfAlmacenamientoConsola1;
     private javax.swing.JTextField tfAñosUsoConsola;
+    private javax.swing.JTextField tfAñosUsoConsola1;
     private javax.swing.JTextField tfAñosUsoPortatil;
     private javax.swing.JTextField tfBateriaPortatil;
     private javax.swing.JTextField tfFabricanteConsola;
+    private javax.swing.JTextField tfFabricanteConsola1;
     private javax.swing.JTextField tfFabricantePortatil;
     private javax.swing.JTextField tfIdentificacionConsola;
+    private javax.swing.JTextField tfIdentificacionConsola1;
     private javax.swing.JTextField tfIdentificacionPortatil;
     private javax.swing.JTextField tfModeloConsola;
+    private javax.swing.JTextField tfModeloConsola1;
     private javax.swing.JTextField tfModeloPortatil;
     private javax.swing.JTextField tfNumeroControles;
+    private javax.swing.JTextField tfNumeroControles1;
     private javax.swing.JTextField tfPrecioConsola;
+    private javax.swing.JTextField tfPrecioConsola1;
     private javax.swing.JTextField tfPrecioPortatil;
     private javax.swing.JTextField tfTamañoPantalla;
     private javax.swing.JTextField tfTipoConexion;
+    private javax.swing.JTextField tfTipoConexion1;
     // End of variables declaration//GEN-END:variables
 }
