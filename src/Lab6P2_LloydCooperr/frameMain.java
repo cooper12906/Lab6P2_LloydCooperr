@@ -23,6 +23,7 @@ public class frameMain extends javax.swing.JFrame {
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
+        popUpMenu = new javax.swing.JPopupMenu();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         tfIdentificacionConsola = new javax.swing.JTextField();
@@ -351,6 +352,15 @@ public class frameMain extends javax.swing.JFrame {
         int numeroControles = Integer.parseInt(tfNumeroControles.getText());
         int almacenamiento = Integer.parseInt(tfAlmacenamientoConsola.getText());
         String tipoConexion = tfTipoConexion.getText();
+        
+        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
+            }
+        ));
         DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
             
         if ((identificacion.length() == 8) &&
@@ -385,7 +395,7 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCrearConsolaMouseClicked
     
     private void btnCrearPortatil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearPortatil1MouseClicked
-        String identificacion = tfIdentificacionPortatil.getText();
+        String identificacion = tfIdentificacionPortatil.getText().toUpperCase();
         String fabricante = tfFabricantePortatil.getText();
         int añosUso = Integer.parseInt(tfAñosUsoPortatil.getText());
         int precio = Integer.parseInt(tfPrecioPortatil.getText());
@@ -400,11 +410,32 @@ public class frameMain extends javax.swing.JFrame {
             tieneEstuche = false;
         }
         
+        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
+            }
+        ));
+        DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
+        
         if ((identificacion.length() == 8) &&
-            (identificacion.substring(0, 3).matches("\\d+")) &&
+            (identificacion.substring(0, 4).matches("\\d+")) &&
             (identificacion.substring(4).matches("[A-Z]+"))) {
                 
             consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
+            for (Consola consola : consolas) {
+                model.addRow(new Object[] {
+                    consola.getIdentificacion(),
+                    consola.getFabricante(),
+                    consola.getAñosUso(),
+                    consola.getPrecio(),
+                    consola.getModelo(),
+                });
+            }
+
+            tableConsolas.setModel(model);
             JOptionPane.showMessageDialog(this,"Consola portatil agregada correctamente");                           
         } else {
             JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
@@ -417,16 +448,13 @@ public class frameMain extends javax.swing.JFrame {
         tfModeloPortatil.setText("");
         tfTamañoPantalla.setText("");
         tfBateriaPortatil.setText("");
+        rbSi.setSelected(false);
+        rbNo.setSelected(false);
     }//GEN-LAST:event_btnCrearPortatil1MouseClicked
 
     private void tableConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConsolasMouseClicked
         if (evt.isMetaDown()) {
-        int option = JOptionPane.showConfirmDialog(this, "¿Deseas hacer algo?", "Confirmación", JOptionPane.YES_NO_OPTION);
-        if (option == JOptionPane.YES_OPTION) {
-            // Realizar alguna acción si el usuario selecciona "Sí"
-        } else {
-            // Realizar alguna otra acción si el usuario selecciona "No" o cierra el cuadro de diálogo
-        }
+            
         }
     }//GEN-LAST:event_tableConsolasMouseClicked
 
@@ -489,6 +517,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JPopupMenu popUpMenu;
     private javax.swing.JRadioButton rbNo;
     private javax.swing.JRadioButton rbSi;
     private javax.swing.JTable tableConsolas;
