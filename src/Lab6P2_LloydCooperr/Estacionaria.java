@@ -11,9 +11,7 @@ public class Estacionaria extends Consola {
         this.almacenamiento = almacenamiento;
         this.tipoConexion = tipoConexion;
     }
-
     
-
     public int getNumeroControles() {
         return numeroControles;
     }

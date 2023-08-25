@@ -1,6 +1,7 @@
 package Lab6P2_LloydCooperr;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 public class Consola {
     private String identificacion;
@@ -23,7 +24,12 @@ public class Consola {
     }
 
     public void setIdentificacion(String identificacion) {
-        this.identificacion = identificacion;
+        if (identificacion.length() <= 4) {
+            this.identificacion = identificacion;
+        } else {
+            JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
+        }
+        
     }
 
     public String getFabricante() {
