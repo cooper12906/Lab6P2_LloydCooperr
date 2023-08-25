@@ -20,6 +20,7 @@ public class frameMain extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         tfIdentificacionConsola = new javax.swing.JTextField();
@@ -41,11 +42,11 @@ public class frameMain extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
-        tfIdentificacionConsola1 = new javax.swing.JTextField();
-        tfFabricanteConsola1 = new javax.swing.JTextField();
-        tfAñosUsoConsola1 = new javax.swing.JTextField();
-        tfPrecioConsola1 = new javax.swing.JTextField();
-        tfModeloConsola1 = new javax.swing.JTextField();
+        tfIdentificacionPortatil = new javax.swing.JTextField();
+        tfFabricantePortatil = new javax.swing.JTextField();
+        tfAñosUsoPortatil = new javax.swing.JTextField();
+        tfPrecioPortatil = new javax.swing.JTextField();
+        tfModeloPortatil = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
@@ -53,6 +54,10 @@ public class frameMain extends javax.swing.JFrame {
         jLabel11 = new javax.swing.JLabel();
         btnCrearPortatil1 = new javax.swing.JButton();
         jLabel12 = new javax.swing.JLabel();
+        tfTamañoPantalla = new javax.swing.JTextField();
+        tfBateriaPortatil = new javax.swing.JTextField();
+        rbNo = new javax.swing.JRadioButton();
+        rbSi = new javax.swing.JRadioButton();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -201,66 +206,89 @@ public class frameMain extends javax.swing.JFrame {
         jLabel12.setForeground(new java.awt.Color(0, 0, 0));
         jLabel12.setText("Crear portatil");
 
+        buttonGroup1.add(rbNo);
+        rbNo.setText("No");
+
+        buttonGroup1.add(rbSi);
+        rbSi.setText("Si");
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap(53, Short.MAX_VALUE)
+                .addContainerGap(112, Short.MAX_VALUE)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                         .addComponent(btnCrearPortatil1)
                         .addGap(53, 53, 53))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel12)
-                            .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel8)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel10))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(tfIdentificacionConsola1)
-                                    .addComponent(tfFabricanteConsola1)
-                                    .addComponent(tfAñosUsoConsola1)
-                                    .addComponent(tfPrecioConsola1)
-                                    .addComponent(tfModeloConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addGap(225, 225, 225))))
+                        .addGap(125, 125, 125)
+                        .addComponent(jLabel12)
+                        .addGap(224, 224, 224))))
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabel11)
+                    .addComponent(jLabel8)
+                    .addComponent(jLabel7)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(tfBateriaPortatil)
+                    .addComponent(tfTamañoPantalla)
+                    .addComponent(tfIdentificacionPortatil)
+                    .addComponent(tfFabricantePortatil)
+                    .addComponent(tfAñosUsoPortatil)
+                    .addComponent(tfPrecioPortatil)
+                    .addComponent(tfModeloPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbSi)
+                    .addComponent(rbNo))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addGap(31, 31, 31)
                 .addComponent(jLabel12)
-                .addGap(48, 48, 48)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfIdentificacionConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfFabricanteConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(tfIdentificacionPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7)
+                    .addComponent(rbSi))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfAñosUsoConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfFabricantePortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(rbNo))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(tfAñosUsoPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfPrecioConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfPrecioPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel10))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(tfModeloConsola1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(tfModeloPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel11))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfTamañoPantalla, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(tfBateriaPortatil, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(btnCrearPortatil1)
                 .addGap(34, 34, 34))
         );
 
         jTabbedPane1.addTab("Crear portatil", jPanel4);
+
+        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -270,7 +298,7 @@ public class frameMain extends javax.swing.JFrame {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 391, Short.MAX_VALUE)
+            .addGap(0, 397, Short.MAX_VALUE)
         );
 
         jTabbedPane1.addTab("Listar consola", jPanel3);
@@ -303,9 +331,26 @@ public class frameMain extends javax.swing.JFrame {
         
         JOptionPane.showMessageDialog(this,"Consola estacionaria agregada correctamente");
     }//GEN-LAST:event_btnCrearConsolaMouseClicked
-
+    
     private void btnCrearPortatil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearPortatil1MouseClicked
-        // TODO add your handling code here:
+        String identificacion = tfIdentificacionPortatil.getText();
+        String fabricante = tfFabricantePortatil.getText();
+        int añosUso = Integer.parseInt(tfAñosUsoPortatil.getText());
+        int precio = Integer.parseInt(tfPrecioPortatil.getText());
+        String modelo = tfModeloPortatil.getText();
+        String tamañoPantalla = tfTamañoPantalla.getText();
+        String bateria = tfBateriaPortatil.getText();
+        boolean tieneEstuche = false;
+        
+        if (rbSi.isSelected()) {
+            tieneEstuche = true;
+        } else if (rbNo.isSelected()) {
+            tieneEstuche = false;
+        }
+        
+        consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
+        
+        JOptionPane.showMessageDialog(this, "Consola portatil agregada correctamente");
     }//GEN-LAST:event_btnCrearPortatil1MouseClicked
 
     /**
@@ -346,6 +391,7 @@ public class frameMain extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCrearConsola;
     private javax.swing.JButton btnCrearPortatil1;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -365,18 +411,22 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JRadioButton rbNo;
+    private javax.swing.JRadioButton rbSi;
     private javax.swing.JTextField tfAlmacenamientoConsola;
     private javax.swing.JTextField tfAñosUsoConsola;
-    private javax.swing.JTextField tfAñosUsoConsola1;
+    private javax.swing.JTextField tfAñosUsoPortatil;
+    private javax.swing.JTextField tfBateriaPortatil;
     private javax.swing.JTextField tfFabricanteConsola;
-    private javax.swing.JTextField tfFabricanteConsola1;
+    private javax.swing.JTextField tfFabricantePortatil;
     private javax.swing.JTextField tfIdentificacionConsola;
-    private javax.swing.JTextField tfIdentificacionConsola1;
+    private javax.swing.JTextField tfIdentificacionPortatil;
     private javax.swing.JTextField tfModeloConsola;
-    private javax.swing.JTextField tfModeloConsola1;
+    private javax.swing.JTextField tfModeloPortatil;
     private javax.swing.JTextField tfNumeroControles;
     private javax.swing.JTextField tfPrecioConsola;
-    private javax.swing.JTextField tfPrecioConsola1;
+    private javax.swing.JTextField tfPrecioPortatil;
+    private javax.swing.JTextField tfTamañoPantalla;
     private javax.swing.JTextField tfTipoConexion;
     // End of variables declaration//GEN-END:variables
 }
