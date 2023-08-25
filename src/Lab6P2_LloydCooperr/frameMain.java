@@ -2,6 +2,7 @@ package Lab6P2_LloydCooperr;
 
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class frameMain extends javax.swing.JFrame {
     
@@ -295,15 +296,17 @@ public class frameMain extends javax.swing.JFrame {
 
         tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio"
             }
         ));
+        tableConsolas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tableConsolasMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tableConsolas);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -340,7 +343,7 @@ public class frameMain extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearConsolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearConsolaMouseClicked
-        String identificacion = tfIdentificacionConsola.getText();
+        String identificacion = tfIdentificacionConsola.getText().toUpperCase();
         String fabricante = tfFabricanteConsola.getText();
         int añosUso = Integer.parseInt(tfAñosUsoConsola.getText());
         int precio = Integer.parseInt(tfPrecioConsola.getText());
@@ -348,12 +351,24 @@ public class frameMain extends javax.swing.JFrame {
         int numeroControles = Integer.parseInt(tfNumeroControles.getText());
         int almacenamiento = Integer.parseInt(tfAlmacenamientoConsola.getText());
         String tipoConexion = tfTipoConexion.getText();
+        DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
             
         if ((identificacion.length() == 8) &&
-            (identificacion.substring(0, 3).matches("\\d+")) &&
+            (identificacion.substring(0, 4).matches("\\d+")) &&
             (identificacion.substring(4).matches("[A-Z]+"))) {
                 
             consolas.add(new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo));
+            for (Consola consola : consolas) {
+                model.addRow(new Object[] {
+                    consola.getIdentificacion(),
+                    consola.getFabricante(),
+                    consola.getAñosUso(),
+                    consola.getPrecio(),
+                    consola.getModelo(),
+                });
+            }
+
+            tableConsolas.setModel(model);
             JOptionPane.showMessageDialog(this,"Consola estacionaria agregada correctamente");                           
         } else {
             JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
@@ -403,6 +418,17 @@ public class frameMain extends javax.swing.JFrame {
         tfTamañoPantalla.setText("");
         tfBateriaPortatil.setText("");
     }//GEN-LAST:event_btnCrearPortatil1MouseClicked
+
+    private void tableConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConsolasMouseClicked
+        if (evt.isMetaDown()) {
+        int option = JOptionPane.showConfirmDialog(this, "¿Deseas hacer algo?", "Confirmación", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+            // Realizar alguna acción si el usuario selecciona "Sí"
+        } else {
+            // Realizar alguna otra acción si el usuario selecciona "No" o cierra el cuadro de diálogo
+        }
+        }
+    }//GEN-LAST:event_tableConsolasMouseClicked
 
     /**
      * @param args the command line arguments
