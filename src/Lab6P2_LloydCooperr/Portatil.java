@@ -1,13 +1,43 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Lab6P2_LloydCooperr;
 
-/**
- *
- * @author CUSTOMER PC
- */
-public class Portatil {
+public class Portatil extends Consola {
+    private String tamañoPantalla;
+    private String bateria;
+    private boolean tieneEstuche;
+
+    public Portatil(String tamañoPantalla, String bateria, boolean tieneEstuche, String identificacion, String fabricante, int añosUso, int precio, String modelo) {
+        super(identificacion, fabricante, añosUso, precio, modelo);
+        this.tamañoPantalla = tamañoPantalla;
+        this.bateria = bateria;
+        this.tieneEstuche = tieneEstuche;
+    }
     
+    public String getTamañoPantalla() {
+        return tamañoPantalla;
+    }
+
+    public void setTamañoPantalla(String tamañoPantalla) {
+        this.tamañoPantalla = tamañoPantalla;
+    }
+
+    public String getBateria() {
+        return bateria;
+    }
+
+    public void setBateria(String bateria) {
+        this.bateria = bateria;
+    }
+
+    public boolean isTieneEstuche() {
+        return tieneEstuche;
+    }
+
+    public void setTieneEstuche(boolean tieneEstuche) {
+        this.tieneEstuche = tieneEstuche;
+    }
+
+    @Override
+    public String toString() {
+        return "tamañoPantalla=" + tamañoPantalla + ", bateria=" + bateria + ", tieneEstuche=" + tieneEstuche + '}';
+    }
 }
