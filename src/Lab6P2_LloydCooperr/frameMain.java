@@ -12,7 +12,6 @@ public class frameMain extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         dialogModificarConsola.setVisible(false);
-        dialogEliminarConsola.setVisible(false);
         dialogVerJuegos.setVisible(false);
     }
 
@@ -52,7 +51,6 @@ public class frameMain extends javax.swing.JFrame {
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
-        dialogEliminarConsola = new javax.swing.JDialog();
         dialogVerJuegos = new javax.swing.JDialog();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
@@ -256,17 +254,6 @@ public class frameMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        javax.swing.GroupLayout dialogEliminarConsolaLayout = new javax.swing.GroupLayout(dialogEliminarConsola.getContentPane());
-        dialogEliminarConsola.getContentPane().setLayout(dialogEliminarConsolaLayout);
-        dialogEliminarConsolaLayout.setHorizontalGroup(
-            dialogEliminarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        dialogEliminarConsolaLayout.setVerticalGroup(
-            dialogEliminarConsolaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout dialogVerJuegosLayout = new javax.swing.GroupLayout(dialogVerJuegos.getContentPane());
@@ -695,16 +682,49 @@ public class frameMain extends javax.swing.JFrame {
 
     private void tableConsolasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tableConsolasMouseClicked
         if (evt.isMetaDown()) {
-            popUpMenu.show(evt.getComponent(), evt.getX(), evt.getX());
-            
+            if (tableConsolas.getSelectedRow() >= 0) {
+                popUpMenu.show(evt.getComponent(), evt.getX(), evt.getY());
+            }     
         }
     }//GEN-LAST:event_tableConsolasMouseClicked
-
+private int filaSeleccionada = -1;
+    
     private void btnModificarConsolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarConsolaMouseClicked
-        // TODO add your handling code here:
+        if (filaSeleccionada >= 0 && filaSeleccionada < consolas.size()) {
+            String identificacion = tfIdentificacionConsola1.getText().toUpperCase();
+            String fabricante = tfFabricanteConsola1.getText();
+            int añosUso = Integer.parseInt(tfAñosUsoConsola1.getText());
+            int precio = Integer.parseInt(tfPrecioConsola1.getText());
+            String modelo = tfModeloConsola1.getText();
+            int numeroControles = Integer.parseInt(tfNumeroControles1.getText());
+            int almacenamiento = Integer.parseInt(tfAlmacenamientoConsola1.getText());
+            String tipoConexion = tfTipoConexion1.getText();
+
+            if (filaSeleccionada >= 0 && filaSeleccionada < consolas.size()) {
+                consolas.remove(filaSeleccionada);
+                Consola nuevaConsola = new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo);
+
+                consolas.add(filaSeleccionada, nuevaConsola);
+                
+                DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
+                model.removeRow(filaSeleccionada);
+                model.insertRow(filaSeleccionada, new Object[] {
+                    nuevaConsola.getIdentificacion(),
+                    nuevaConsola.getFabricante(),
+                    nuevaConsola.getModelo(),
+                    nuevaConsola.getAñosUso(),
+                    nuevaConsola.getPrecio(),
+                    "Estacionaria"
+                });
+                dialogModificarConsola.setVisible(false);
+                JOptionPane.showMessageDialog(this, "Consola modificada correctamente");
+            }
+            filaSeleccionada = -1;
+        }
     }//GEN-LAST:event_btnModificarConsolaMouseClicked
 
     private void modificarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_modificarConsolaActionPerformed
+        filaSeleccionada = tableConsolas.getSelectedRow();
         dialogModificarConsola.pack();
         dialogModificarConsola.setModal(true);
         dialogModificarConsola.setLocationRelativeTo(this);
@@ -716,7 +736,23 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_listarJuegosActionPerformed
 
     private void eliminarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarConsolaActionPerformed
-        // TODO add your handling code here:
+        int filaSeleccionada = tableConsolas.getSelectedRow();
+    
+        if (filaSeleccionada >= 0) {
+            int confirmacion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres eliminar esta consola?", "Confirmación", JOptionPane.YES_NO_OPTION);
+
+            if (confirmacion == JOptionPane.YES_OPTION) {
+                // Realiza la eliminación de la consola de la lista 'consolas' y de la fila en la tabla.
+                consolas.remove(filaSeleccionada);
+                DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
+                model.removeRow(filaSeleccionada);
+
+                // Muestra un mensaje indicando que la consola fue eliminada.
+                JOptionPane.showMessageDialog(this, "Consola eliminada correctamente");
+            }
+        } else {
+            JOptionPane.showMessageDialog(this, "Selecciona una consola para eliminar");
+        }
     }//GEN-LAST:event_eliminarConsolaActionPerformed
 
     /**
@@ -759,7 +795,6 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JButton btnCrearPortatil1;
     private javax.swing.JButton btnModificarConsola;
     private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.JDialog dialogEliminarConsola;
     private javax.swing.JDialog dialogModificarConsola;
     private javax.swing.JDialog dialogVerJuegos;
     private javax.swing.JMenuItem eliminarConsola;
