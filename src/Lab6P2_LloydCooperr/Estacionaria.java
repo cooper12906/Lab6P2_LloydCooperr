@@ -34,14 +34,5 @@ public class Estacionaria extends Consola {
 
     public void setTipoConexion(String tipoConexion) {
         this.tipoConexion = tipoConexion;
-    }
-
-    @Override
-    public String toString() {
-        return "numeroControles=" + numeroControles + 
-                ", almacenamiento=" + almacenamiento + 
-                ", tipoConexion=" + tipoConexion;
-    }
-
-    
+    }  
 }

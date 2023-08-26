@@ -1,13 +1,15 @@
 package Lab6P2_LloydCooperr;
 
 import java.util.ArrayList;
+import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class frameMain extends javax.swing.JFrame {
-    
-    private ArrayList <Consola> consolas = new ArrayList();
-    private ArrayList <Juego> juegos = new ArrayList();
+
+    private ArrayList<Consola> consolas = new ArrayList();
+    private ArrayList<Juego> juegos = new ArrayList();
+
     public frameMain() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -52,6 +54,30 @@ public class frameMain extends javax.swing.JFrame {
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         dialogVerJuegos = new javax.swing.JDialog();
+        jPanel7 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        listaJuegos = new javax.swing.JList<>();
+        jLabel35 = new javax.swing.JLabel();
+        jLabel36 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        jLabel38 = new javax.swing.JLabel();
+        jLabel39 = new javax.swing.JLabel();
+        jLabel40 = new javax.swing.JLabel();
+        jLabel41 = new javax.swing.JLabel();
+        tfNombreJuego = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        textAreaDescripcion = new javax.swing.JTextArea();
+        dateChooserJuego = new com.toedter.calendar.JDateChooser();
+        tfPrecioJuego = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jLabel42 = new javax.swing.JLabel();
+        tfCantidadDisponible = new javax.swing.JTextField();
+        btnAgregarJuego = new javax.swing.JButton();
         dialogModificarPortatil = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         tfIdentificacionPortatil1 = new javax.swing.JTextField();
@@ -72,6 +98,10 @@ public class frameMain extends javax.swing.JFrame {
         rbSi1 = new javax.swing.JRadioButton();
         jLabel33 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        jPanel8 = new javax.swing.JPanel();
+        buttonGroup2 = new javax.swing.ButtonGroup();
+        buttonGroup3 = new javax.swing.ButtonGroup();
+        buttonGroup4 = new javax.swing.ButtonGroup();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jPanel1 = new javax.swing.JPanel();
         tfIdentificacionConsola = new javax.swing.JTextField();
@@ -276,15 +306,156 @@ public class frameMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
+        jPanel7.setBackground(new java.awt.Color(255, 255, 255));
+
+        listaJuegos.setModel(new DefaultListModel());
+        jScrollPane2.setViewportView(listaJuegos);
+
+        jLabel35.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel35.setText("Nombre");
+
+        jLabel36.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel36.setText("Fecha de lanzamiento");
+
+        jLabel37.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel37.setText("Descripcion");
+
+        jLabel38.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel38.setText("Precio del juego");
+
+        jLabel39.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel39.setText("Estado");
+
+        jLabel40.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel40.setText("Rentable");
+
+        jLabel41.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel41.setText("Agregado");
+
+        textAreaDescripcion.setColumns(20);
+        textAreaDescripcion.setRows(5);
+        jScrollPane3.setViewportView(textAreaDescripcion);
+
+        jRadioButton1.setText("jRadioButton1");
+
+        jRadioButton2.setText("jRadioButton2");
+
+        jRadioButton3.setText("jRadioButton3");
+
+        jRadioButton4.setText("jRadioButton4");
+
+        jRadioButton5.setText("jRadioButton5");
+
+        jRadioButton6.setText("jRadioButton6");
+
+        jLabel42.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel42.setText("Cantidad disponible");
+
+        btnAgregarJuego.setText("Agregar juego");
+        btnAgregarJuego.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnAgregarJuegoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
+        jPanel7.setLayout(jPanel7Layout);
+        jPanel7Layout.setHorizontalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel7Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3)
+                    .addComponent(dateChooserJuego, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(tfNombreJuego)
+                    .addComponent(jLabel35)
+                    .addComponent(jLabel37)
+                    .addComponent(jLabel36)
+                    .addComponent(jLabel38)
+                    .addComponent(tfPrecioJuego)
+                    .addComponent(jLabel39)
+                    .addComponent(jLabel40)
+                    .addComponent(jLabel41)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jRadioButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton2))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jRadioButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton4))
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jRadioButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jRadioButton6))
+                    .addComponent(jLabel42)
+                    .addComponent(tfCantidadDisponible))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(26, 26, 26))
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(238, 238, 238)
+                .addComponent(btnAgregarJuego)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel7Layout.setVerticalGroup(
+            jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel7Layout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane2)
+                    .addGroup(jPanel7Layout.createSequentialGroup()
+                        .addComponent(jLabel35)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfNombreJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel37)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel36)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(dateChooserJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfPrecioJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel39)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton1)
+                            .addComponent(jRadioButton2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel40)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton3)
+                            .addComponent(jRadioButton4))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel41)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jRadioButton5)
+                            .addComponent(jRadioButton6))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfCantidadDisponible, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(btnAgregarJuego)
+                .addContainerGap(12, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout dialogVerJuegosLayout = new javax.swing.GroupLayout(dialogVerJuegos.getContentPane());
         dialogVerJuegos.getContentPane().setLayout(dialogVerJuegosLayout);
         dialogVerJuegosLayout.setHorizontalGroup(
             dialogVerJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         dialogVerJuegosLayout.setVerticalGroup(
             dialogVerJuegosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         jPanel5.setBackground(new java.awt.Color(255, 255, 255));
@@ -424,6 +595,17 @@ public class frameMain extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -725,21 +907,19 @@ public class frameMain extends javax.swing.JFrame {
         int numeroControles = Integer.parseInt(tfNumeroControles.getText());
         int almacenamiento = Integer.parseInt(tfAlmacenamientoConsola.getText());
         String tipoConexion = tfTipoConexion.getText();
-        
-        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
 
-            },
-            new String [] {
-                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio", "Tipo de consola"
-            }
+        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio", "Tipo de consola"
+                }
         ));
         DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
-            
-        if ((identificacion.length() == 8) &&
-            (identificacion.substring(0, 4).matches("\\d+")) &&
-            (identificacion.substring(4).matches("[A-Z]+"))) {
-                
+
+        if ((identificacion.length() == 8)
+                && (identificacion.substring(0, 4).matches("\\d+"))
+                && (identificacion.substring(4).matches("[A-Z]+"))) {
+
             consolas.add(new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo));
             String tipo = "";
             for (Consola consola : consolas) {
@@ -748,7 +928,7 @@ public class frameMain extends javax.swing.JFrame {
                 } else {
                     tipo = "Estacionario";
                 }
-                model.addRow(new Object[] {
+                model.addRow(new Object[]{
                     consola.getIdentificacion(),
                     consola.getFabricante(),
                     consola.getAñosUso(),
@@ -759,11 +939,11 @@ public class frameMain extends javax.swing.JFrame {
             }
 
             tableConsolas.setModel(model);
-            JOptionPane.showMessageDialog(this,"Consola estacionaria agregada correctamente");                           
+            JOptionPane.showMessageDialog(this, "Consola estacionaria agregada correctamente");
         } else {
             JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
-        }    
-        
+        }
+
         tfIdentificacionConsola.setText("");
         tfFabricanteConsola.setText("");
         tfAñosUsoConsola.setText("");
@@ -773,7 +953,7 @@ public class frameMain extends javax.swing.JFrame {
         tfAlmacenamientoConsola.setText("");
         tfTipoConexion.setText("");
     }//GEN-LAST:event_btnCrearConsolaMouseClicked
-    
+
     private void btnCrearPortatil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCrearPortatil1MouseClicked
         String identificacion = tfIdentificacionPortatil.getText().toUpperCase();
         String fabricante = tfFabricantePortatil.getText();
@@ -783,27 +963,25 @@ public class frameMain extends javax.swing.JFrame {
         String tamañoPantalla = tfTamañoPantalla.getText();
         String bateria = tfBateriaPortatil.getText();
         boolean tieneEstuche = false;
-        
+
         if (rbSi.isSelected()) {
             tieneEstuche = true;
         } else if (rbNo.isSelected()) {
             tieneEstuche = false;
         }
-        
-        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
 
-            },
-            new String [] {
-                "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio" , "Tipo de consola"
-            }
+        tableConsolas.setModel(new javax.swing.table.DefaultTableModel(
+                new Object[][]{},
+                new String[]{
+                    "Identificacion", "Fabricante", "Modelo", "Años de uso", "Precio", "Tipo de consola"
+                }
         ));
         DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
-        
-        if ((identificacion.length() == 8) &&
-            (identificacion.substring(0, 4).matches("\\d+")) &&
-            (identificacion.substring(4).matches("[A-Z]+"))) {
-                
+
+        if ((identificacion.length() == 8)
+                && (identificacion.substring(0, 4).matches("\\d+"))
+                && (identificacion.substring(4).matches("[A-Z]+"))) {
+
             consolas.add(new Portatil(tamañoPantalla, bateria, tieneEstuche, identificacion, fabricante, añosUso, precio, modelo));
             String tipo = "";
             for (Consola consola : consolas) {
@@ -812,7 +990,7 @@ public class frameMain extends javax.swing.JFrame {
                 } else {
                     tipo = "Estacionario";
                 }
-                model.addRow(new Object[] {
+                model.addRow(new Object[]{
                     consola.getIdentificacion(),
                     consola.getFabricante(),
                     consola.getAñosUso(),
@@ -823,11 +1001,11 @@ public class frameMain extends javax.swing.JFrame {
             }
 
             tableConsolas.setModel(model);
-            JOptionPane.showMessageDialog(this,"Consola portatil agregada correctamente");                           
+            JOptionPane.showMessageDialog(this, "Consola portatil agregada correctamente");
         } else {
             JOptionPane.showMessageDialog(null, "El numero de digitos no puede ser mayor a 4");
         }
-        
+
         tfIdentificacionPortatil.setText("");
         tfFabricantePortatil.setText("");
         tfAñosUsoPortatil.setText("");
@@ -843,11 +1021,11 @@ public class frameMain extends javax.swing.JFrame {
         if (evt.isMetaDown()) {
             if (tableConsolas.getSelectedRow() >= 0) {
                 popUpMenu.show(evt.getComponent(), evt.getX(), evt.getY());
-            }     
+            }
         }
     }//GEN-LAST:event_tableConsolasMouseClicked
     private int filaSeleccionada = -1;
-    
+
     private void btnModificarConsolaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarConsolaMouseClicked
         if (filaSeleccionada >= 0 && filaSeleccionada < consolas.size()) {
             String identificacion = tfIdentificacionConsola1.getText().toUpperCase();
@@ -864,10 +1042,10 @@ public class frameMain extends javax.swing.JFrame {
                 Consola nuevaConsola = new Estacionaria(numeroControles, almacenamiento, tipoConexion, identificacion, fabricante, añosUso, precio, modelo);
 
                 consolas.add(filaSeleccionada, nuevaConsola);
-                
+
                 DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
                 model.removeRow(filaSeleccionada);
-                model.insertRow(filaSeleccionada, new Object[] {
+                model.insertRow(filaSeleccionada, new Object[]{
                     nuevaConsola.getIdentificacion(),
                     nuevaConsola.getFabricante(),
                     nuevaConsola.getModelo(),
@@ -891,7 +1069,7 @@ public class frameMain extends javax.swing.JFrame {
             dialogModificarConsola.setVisible(true);
         } else {
             filaSeleccionada = tableConsolas.getSelectedRow();
-            
+
         }
     }//GEN-LAST:event_modificarConsolaActionPerformed
 
@@ -901,7 +1079,7 @@ public class frameMain extends javax.swing.JFrame {
 
     private void eliminarConsolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_eliminarConsolaActionPerformed
         int filaSeleccionada = tableConsolas.getSelectedRow();
-    
+
         if (filaSeleccionada >= 0) {
             int confirmacion = JOptionPane.showConfirmDialog(this, "¿Estás seguro de que quieres eliminar esta consola?", "Confirmación", JOptionPane.YES_NO_OPTION);
 
@@ -920,21 +1098,24 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_eliminarConsolaActionPerformed
 
     private void btnModificarPortatilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnModificarPortatilMouseClicked
-        if (filaSeleccionada >= 0 && filaSeleccionada < consolas.size()) {
-            String identificacion = tfIdentificacionPortatil1.getText().toUpperCase();
-            String fabricante = tfFabricantePortatil1.getText();
-            int añosUso = Integer.parseInt(tfAñosUsoPortatil1.getText());
-            int precio = Integer.parseInt(tfPrecioPortatil1.getText());
-            String modelo = tfModeloPortatil1.getText();
-            String tamañoPantalla = tfTamañoPantalla1.getText();
-            String bateria = tfBateriaPortatil1.getText();
-            boolean tieneEstuche = false;
+        String identificacion = tfIdentificacionPortatil1.getText().toUpperCase();
+        String fabricante = tfFabricantePortatil1.getText();
+        int añosUso = Integer.parseInt(tfAñosUsoPortatil1.getText());
+        int precio = Integer.parseInt(tfPrecioPortatil1.getText());
+        String modelo = tfModeloPortatil1.getText();
+        String tamañoPantalla = tfTamañoPantalla1.getText();
+        String bateria = tfBateriaPortatil1.getText();
+        boolean tieneEstuche = false;
 
-            if (rbSi1.isSelected()) {
-                tieneEstuche = true;
-            } else if (rbNo1.isSelected()) {
-                tieneEstuche = false;
-            }
+        if (rbSi1.isSelected()) {
+            tieneEstuche = true;
+        } else if (rbNo1.isSelected()) {
+            tieneEstuche = false;
+        }
+
+        if ((identificacion.length() == 8)
+                && (identificacion.substring(0, 4).matches("\\d+"))
+                && (identificacion.substring(4).matches("[A-Z]+"))) {
 
             if (filaSeleccionada >= 0 && filaSeleccionada < consolas.size()) {
                 consolas.remove(filaSeleccionada);
@@ -944,7 +1125,7 @@ public class frameMain extends javax.swing.JFrame {
 
                 DefaultTableModel model = (DefaultTableModel) tableConsolas.getModel();
                 model.removeRow(filaSeleccionada);
-                model.insertRow(filaSeleccionada, new Object[] {
+                model.insertRow(filaSeleccionada, new Object[]{
                     nuevaConsola.getIdentificacion(),
                     nuevaConsola.getFabricante(),
                     nuevaConsola.getModelo(),
@@ -953,12 +1134,17 @@ public class frameMain extends javax.swing.JFrame {
                     "Portatil"
                 });
                 dialogModificarPortatil.setVisible(false);
-                JOptionPane.showMessageDialog(this, "Consola portátil modificada correctamente");
+                JOptionPane.showMessageDialog(this, "Consola portatil modificada correctamente");
             }
-
             filaSeleccionada = -1;
+        } else {
+            JOptionPane.showMessageDialog(this, "La identificación no cumple con el formato requerido.");
         }
     }//GEN-LAST:event_btnModificarPortatilMouseClicked
+
+    private void btnAgregarJuegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarJuegoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnAgregarJuegoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -996,11 +1182,16 @@ public class frameMain extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAgregarJuego;
     private javax.swing.JButton btnCrearConsola;
     private javax.swing.JButton btnCrearPortatil1;
     private javax.swing.JButton btnModificarConsola;
     private javax.swing.JButton btnModificarPortatil;
     private javax.swing.ButtonGroup buttonGroup1;
+    private javax.swing.ButtonGroup buttonGroup2;
+    private javax.swing.ButtonGroup buttonGroup3;
+    private javax.swing.ButtonGroup buttonGroup4;
+    private com.toedter.calendar.JDateChooser dateChooserJuego;
     private javax.swing.JDialog dialogModificarConsola;
     private javax.swing.JDialog dialogModificarPortatil;
     private javax.swing.JDialog dialogVerJuegos;
@@ -1033,7 +1224,15 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
+    private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
+    private javax.swing.JLabel jLabel38;
+    private javax.swing.JLabel jLabel39;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel40;
+    private javax.swing.JLabel jLabel41;
+    private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
@@ -1044,10 +1243,21 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JList<String> listaJuegos;
     private javax.swing.JMenuItem listarJuegos;
     private javax.swing.JMenuItem modificarConsola;
     private javax.swing.JPopupMenu popUpMenu;
@@ -1056,6 +1266,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JRadioButton rbSi;
     private javax.swing.JRadioButton rbSi1;
     private javax.swing.JTable tableConsolas;
+    private javax.swing.JTextArea textAreaDescripcion;
     private javax.swing.JTextField tfAlmacenamientoConsola;
     private javax.swing.JTextField tfAlmacenamientoConsola1;
     private javax.swing.JTextField tfAñosUsoConsola;
@@ -1064,6 +1275,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JTextField tfAñosUsoPortatil1;
     private javax.swing.JTextField tfBateriaPortatil;
     private javax.swing.JTextField tfBateriaPortatil1;
+    private javax.swing.JTextField tfCantidadDisponible;
     private javax.swing.JTextField tfFabricanteConsola;
     private javax.swing.JTextField tfFabricanteConsola1;
     private javax.swing.JTextField tfFabricantePortatil;
@@ -1076,10 +1288,12 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JTextField tfModeloConsola1;
     private javax.swing.JTextField tfModeloPortatil;
     private javax.swing.JTextField tfModeloPortatil1;
+    private javax.swing.JTextField tfNombreJuego;
     private javax.swing.JTextField tfNumeroControles;
     private javax.swing.JTextField tfNumeroControles1;
     private javax.swing.JTextField tfPrecioConsola;
     private javax.swing.JTextField tfPrecioConsola1;
+    private javax.swing.JTextField tfPrecioJuego;
     private javax.swing.JTextField tfPrecioPortatil;
     private javax.swing.JTextField tfPrecioPortatil1;
     private javax.swing.JTextField tfTamañoPantalla;

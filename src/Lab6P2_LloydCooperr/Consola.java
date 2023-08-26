@@ -65,12 +65,5 @@ public class Consola {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
-    }
-
-    @Override
-    public String toString() {
-        return "Consola{" + "identificacion=" + identificacion + ", fabricante=" + fabricante + ", a\u00f1osUso=" + añosUso + ", precio=" + precio + ", juegos=" + juegos + ", modelo=" + modelo + '}';
-    }
-    
-    
+    } 
 }

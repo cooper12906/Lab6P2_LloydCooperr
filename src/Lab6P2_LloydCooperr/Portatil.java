@@ -35,9 +35,4 @@ public class Portatil extends Consola {
     public void setTieneEstuche(boolean tieneEstuche) {
         this.tieneEstuche = tieneEstuche;
     }
-
-    @Override
-    public String toString() {
-        return "tamañoPantalla=" + tamañoPantalla + ", bateria=" + bateria + ", tieneEstuche=" + tieneEstuche + '}';
-    }
 }
