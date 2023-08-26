@@ -1,6 +1,7 @@
 package Lab6P2_LloydCooperr;
 
 import java.util.ArrayList;
+import java.util.Date;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
@@ -69,15 +70,14 @@ public class frameMain extends javax.swing.JFrame {
         textAreaDescripcion = new javax.swing.JTextArea();
         dateChooserJuego = new com.toedter.calendar.JDateChooser();
         tfPrecioJuego = new javax.swing.JTextField();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
-        jRadioButton4 = new javax.swing.JRadioButton();
-        jRadioButton5 = new javax.swing.JRadioButton();
-        jRadioButton6 = new javax.swing.JRadioButton();
+        radioButtonSi = new javax.swing.JRadioButton();
+        radioButtonNo = new javax.swing.JRadioButton();
+        rbSi2 = new javax.swing.JRadioButton();
+        rbNo2 = new javax.swing.JRadioButton();
         jLabel42 = new javax.swing.JLabel();
         tfCantidadDisponible = new javax.swing.JTextField();
         btnAgregarJuego = new javax.swing.JButton();
+        tfEstadoJuego = new javax.swing.JTextField();
         dialogModificarPortatil = new javax.swing.JDialog();
         jPanel5 = new javax.swing.JPanel();
         tfIdentificacionPortatil1 = new javax.swing.JTextField();
@@ -309,6 +309,11 @@ public class frameMain extends javax.swing.JFrame {
         jPanel7.setBackground(new java.awt.Color(255, 255, 255));
 
         listaJuegos.setModel(new DefaultListModel());
+        listaJuegos.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                listaJuegosMouseClicked(evt);
+            }
+        });
         jScrollPane2.setViewportView(listaJuegos);
 
         jLabel35.setForeground(new java.awt.Color(0, 0, 0));
@@ -336,17 +341,13 @@ public class frameMain extends javax.swing.JFrame {
         textAreaDescripcion.setRows(5);
         jScrollPane3.setViewportView(textAreaDescripcion);
 
-        jRadioButton1.setText("jRadioButton1");
+        radioButtonSi.setText("Si");
 
-        jRadioButton2.setText("jRadioButton2");
+        radioButtonNo.setText("No");
 
-        jRadioButton3.setText("jRadioButton3");
+        rbSi2.setText("Si");
 
-        jRadioButton4.setText("jRadioButton4");
-
-        jRadioButton5.setText("jRadioButton5");
-
-        jRadioButton6.setText("jRadioButton6");
+        rbNo2.setText("No");
 
         jLabel42.setForeground(new java.awt.Color(0, 0, 0));
         jLabel42.setText("Cantidad disponible");
@@ -377,19 +378,16 @@ public class frameMain extends javax.swing.JFrame {
                     .addComponent(jLabel40)
                     .addComponent(jLabel41)
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton2))
+                        .addComponent(radioButtonSi)
+                        .addGap(18, 18, 18)
+                        .addComponent(radioButtonNo))
                     .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jRadioButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton4))
-                    .addGroup(jPanel7Layout.createSequentialGroup()
-                        .addComponent(jRadioButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jRadioButton6))
+                        .addComponent(rbSi2)
+                        .addGap(18, 18, 18)
+                        .addComponent(rbNo2))
                     .addComponent(jLabel42)
-                    .addComponent(tfCantidadDisponible))
+                    .addComponent(tfCantidadDisponible)
+                    .addComponent(tfEstadoJuego))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 47, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 265, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(26, 26, 26))
@@ -423,21 +421,19 @@ public class frameMain extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel39)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton1)
-                            .addComponent(jRadioButton2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tfEstadoJuego, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(5, 5, 5)
                         .addComponent(jLabel40)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton3)
-                            .addComponent(jRadioButton4))
+                            .addComponent(radioButtonSi)
+                            .addComponent(radioButtonNo))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel41)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jRadioButton5)
-                            .addComponent(jRadioButton6))
+                            .addComponent(rbSi2)
+                            .addComponent(rbNo2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel42)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1143,8 +1139,47 @@ public class frameMain extends javax.swing.JFrame {
     }//GEN-LAST:event_btnModificarPortatilMouseClicked
 
     private void btnAgregarJuegoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnAgregarJuegoMouseClicked
-        // TODO add your handling code here:
+        String nombre = tfNombreJuego.getText();
+        String descripcion = textAreaDescripcion.getText();
+        Date fechaLanzamiento = dateChooserJuego.getDate();
+        int precioJuego = Integer.parseInt(tfPrecioJuego.getText());
+        String estado = tfEstadoJuego.getText();
+        boolean rentable = false;
+        boolean agregado = false;
+        int cantidadDisponible = Integer.parseInt(tfCantidadDisponible.getText());
+
+        if (rbSi1.isSelected()) {
+            rentable = true;
+        } else if (rbNo1.isSelected()) {
+            rentable = false;
+        }
+        
+        if (rbSi2.isSelected()) {
+            agregado = true;
+        } else if (rbNo2.isSelected()) {
+            agregado = false;
+        }
+        
+        Juego nuevoJuego = new Juego(nombre, descripcion, fechaLanzamiento, precioJuego, estado, rentable, agregado, cantidadDisponible);
+        
+
+        tfNombreJuego.setText("");
+        textAreaDescripcion.setText("");
+        dateChooserJuego.setDate(null);
+        tfPrecioJuego.setText("");
+        tfEstadoJuego.setText("");
+        rbSi1.setSelected(false);
+        rbNo1.setSelected(false);
+        rbSi2.setSelected(false);
+        rbNo2.setSelected(false);
+        tfCantidadDisponible.setText("");
+        
+        JOptionPane.showMessageDialog(this, "Juego agregado correctamente");
     }//GEN-LAST:event_btnAgregarJuegoMouseClicked
+
+    private void listaJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaJuegosMouseClicked
+        
+    }//GEN-LAST:event_listaJuegosMouseClicked
 
     /**
      * @param args the command line arguments
@@ -1245,12 +1280,6 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
-    private javax.swing.JRadioButton jRadioButton4;
-    private javax.swing.JRadioButton jRadioButton5;
-    private javax.swing.JRadioButton jRadioButton6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
@@ -1261,10 +1290,14 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JMenuItem listarJuegos;
     private javax.swing.JMenuItem modificarConsola;
     private javax.swing.JPopupMenu popUpMenu;
+    private javax.swing.JRadioButton radioButtonNo;
+    private javax.swing.JRadioButton radioButtonSi;
     private javax.swing.JRadioButton rbNo;
     private javax.swing.JRadioButton rbNo1;
+    private javax.swing.JRadioButton rbNo2;
     private javax.swing.JRadioButton rbSi;
     private javax.swing.JRadioButton rbSi1;
+    private javax.swing.JRadioButton rbSi2;
     private javax.swing.JTable tableConsolas;
     private javax.swing.JTextArea textAreaDescripcion;
     private javax.swing.JTextField tfAlmacenamientoConsola;
@@ -1276,6 +1309,7 @@ public class frameMain extends javax.swing.JFrame {
     private javax.swing.JTextField tfBateriaPortatil;
     private javax.swing.JTextField tfBateriaPortatil1;
     private javax.swing.JTextField tfCantidadDisponible;
+    private javax.swing.JTextField tfEstadoJuego;
     private javax.swing.JTextField tfFabricanteConsola;
     private javax.swing.JTextField tfFabricanteConsola1;
     private javax.swing.JTextField tfFabricantePortatil;
