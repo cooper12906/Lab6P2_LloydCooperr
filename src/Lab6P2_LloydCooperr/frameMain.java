@@ -1160,9 +1160,9 @@ public class frameMain extends javax.swing.JFrame {
             agregado = false;
         }
         
-        Juego nuevoJuego = new Juego(nombre, descripcion, fechaLanzamiento, precioJuego, estado, rentable, agregado, cantidadDisponible);
+        consolas.get(tableConsolas.getSelectedRow()).getJuegos().add(new Juego(nombre, descripcion, fechaLanzamiento, precioJuego, estado, rentable, agregado, cantidadDisponible));
+        listaJuegos.setModel(actualizarTable());
         
-
         tfNombreJuego.setText("");
         textAreaDescripcion.setText("");
         dateChooserJuego.setDate(null);
@@ -1180,7 +1180,15 @@ public class frameMain extends javax.swing.JFrame {
     private void listaJuegosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listaJuegosMouseClicked
         
     }//GEN-LAST:event_listaJuegosMouseClicked
-
+    
+    public DefaultListModel actualizarTable(){
+        listaJuegos.setModel(new DefaultListModel());
+        DefaultListModel listModel = (DefaultListModel) listaJuegos.getModel();
+        for (Juego juego : consolas.get(tableConsolas.getSelectedRow()).getJuegos()) {
+            listModel.addElement(juego);
+        }
+        return listModel;
+    }
     /**
      * @param args the command line arguments
      */
